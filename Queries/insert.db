@@ -1,0 +1,3 @@
+INSERT INTO public.book2d(
+	book2did, bookname, booksku, boxmodel, covertype, width, height)
+	VALUES (7, 'testing', 'testing', 'testing', 'testing', 2, 10);
