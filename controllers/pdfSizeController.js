@@ -22,7 +22,7 @@ class Controller {
   };
   getPdfSizeWithDimensions = async (req, res) => {
     try {
-      const { id } = req.params;
+      const { id } = req.body;
       const pdfSize = await pool.query(
         "SELECT pdfsize.pdfsize_id, dimension.width, dimension.height FROM pdfsize JOIN dimension ON pdfsize.pdfsize_id= dimension.dimension_id AND pdfsize.pdfsize_id = $1",
         [id]

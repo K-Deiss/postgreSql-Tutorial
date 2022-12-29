@@ -37,7 +37,7 @@ class Controller {
   };
   getDimensionById = async (req, res) => {
     try {
-      const { id } = req.params;
+      const { id } = req.body;
       const dimensionToBeRetrieved = await pool.query(
         "SELECT * FROM dimension where dimension_id = $1",
         [id]
@@ -62,7 +62,7 @@ class Controller {
   };
   deleteDimensionById = async (req, res) => {
     try {
-      const { id } = req.params;
+      const { id } = req.body;
       const deleteDimension = await pool.query(
         "DELETE FROM dimension WHERE dimension_id = $1",
         [id]
